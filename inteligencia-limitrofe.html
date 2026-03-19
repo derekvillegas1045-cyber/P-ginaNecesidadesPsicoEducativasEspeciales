@@ -232,7 +232,41 @@
     </footer>
 
     <script>
+        // Inicializa los iconos de Lucide
         lucide.createIcons();
+
+        // Menú móvil (hamburguesa) - funciona en todas las páginas que usan #btn-menu y #menu-movil
+        const btnMenu = document.getElementById('btn-menu');
+        const menuMovil = document.getElementById('menu-movil');
+        const opcionesMenu = document.querySelectorAll('.opcion-menu');
+
+        if (btnMenu && menuMovil) {
+            let menuAbierto = false;
+
+            btnMenu.addEventListener('click', () => {
+                menuAbierto = !menuAbierto;
+
+                if (menuAbierto) {
+                    menuMovil.classList.remove('hidden');
+                    btnMenu.innerHTML = '<i data-lucide="x" id="icono-menu" class="h-6 w-6"></i>';
+                } else {
+                    menuMovil.classList.add('hidden');
+                    btnMenu.innerHTML = '<i data-lucide="menu" id="icono-menu" class="h-6 w-6"></i>';
+                }
+
+                // Re-renderiza el icono (Lucide reemplaza el <i> con SVG)
+                lucide.createIcons();
+            });
+
+            opcionesMenu.forEach(enlace => {
+                enlace.addEventListener('click', () => {
+                    menuAbierto = false;
+                    menuMovil.classList.add('hidden');
+                    btnMenu.innerHTML = '<i data-lucide="menu" id="icono-menu" class="h-6 w-6"></i>';
+                    lucide.createIcons();
+                });
+            });
+        }
     </script>
 </body>
 </html>
