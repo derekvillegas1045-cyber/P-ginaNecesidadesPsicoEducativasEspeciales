@@ -60,18 +60,132 @@
     </nav>
 
     <!-- Contenido Principal -->
-    <main class="py-16 md:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-16">
-            <h1 class="text-4xl font-extrabold text-slate-900">Inteligencia Limítrofe</h1>
-            <p class="mt-4 text-xl text-slate-500">Estrategias para apoyar el desarrollo de la inteligencia limítrofe.</p>
+    <section id="bandeja-magica" class="py-16 md:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Encabezado de la actividad -->
+        <div class="bg-amber-500 rounded-t-3xl p-8 md:p-12 text-white relative overflow-hidden">
+            <!-- Ícono decorativo de fondo -->
+            <i data-lucide="sparkles" class="absolute -top-10 -right-10 h-64 w-64 text-amber-400 opacity-30"></i>
+            
+            <div class="relative z-10 max-w-3xl">
+                <span class="bg-amber-600 text-amber-50 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">
+                    Metodología Montessori
+                </span>
+                <h2 class="mt-4 text-3xl md:text-4xl font-extrabold flex items-center">
+                    La Bandeja Mágica
+                    <i data-lucide="wand-2" class="ml-3 h-8 w-8"></i>
+                </h2>
+                <p class="mt-4 text-lg text-amber-50 leading-relaxed">
+                    Una herramienta sencilla para apoyar el aprendizaje de la lectoescritura, ideal para niños con <strong>inteligencia límite</strong>. Su mayor beneficio: permite practicar sin miedo al error, evitando la frustración.
+                </p>
+            </div>
         </div>
 
-        <div class="bg-white p-8 rounded-2xl shadow-xl">
-            <p class="text-slate-600 leading-relaxed">
-                Contenido sobre inteligencia limítrofe próximamente disponible.
-            </p>
+        <!-- Contenido principal dividido en columnas -->
+        <div class="bg-white rounded-b-3xl shadow-xl border border-slate-100 p-8 md:p-12">
+            <div class="grid md:grid-cols-12 gap-10">
+                
+                <!-- Columna Izquierda: Materiales y Progresión (ocupa 4 de 12 columnas en PC) -->
+                <div class="md:col-span-4 space-y-8">
+                    
+                    <!-- Tarjeta de Materiales -->
+                    <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200">
+                        <h3 class="text-xl font-bold text-slate-800 flex items-center mb-4">
+                            <i data-lucide="package-open" class="text-amber-500 mr-2 h-6 w-6"></i>
+                            ¿Qué se necesita?
+                        </h3>
+                        <ul class="space-y-3 text-slate-600">
+                            <li class="flex items-start">
+                                <i data-lucide="check-circle-2" class="text-green-500 mr-2 h-5 w-5 flex-shrink-0 mt-0.5"></i>
+                                <span>Una <strong>bandeja plana</strong> (charola de cocina o tapa de caja).</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-lucide="check-circle-2" class="text-green-500 mr-2 h-5 w-5 flex-shrink-0 mt-0.5"></i>
+                                <span><strong>Material fino:</strong> Sal, harina, arena o azúcar.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-lucide="check-circle-2" class="text-green-500 mr-2 h-5 w-5 flex-shrink-0 mt-0.5"></i>
+                                <span><strong>Tarjetas</strong> con letras escritas en mayúscula.</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Tarjeta de Progresión -->
+                    <div class="bg-amber-50 p-6 rounded-2xl border border-amber-200">
+                        <h3 class="text-lg font-bold text-amber-800 mb-2 flex items-center">
+                            <i data-lucide="trending-up" class="mr-2 h-5 w-5"></i>
+                            Progresión sugerida
+                        </h3>
+                        <ol class="list-decimal list-inside text-amber-900 text-sm space-y-2">
+                            <li>Trazos libres para ganar confianza.</li>
+                            <li>Copiar letras de las tarjetas.</li>
+                            <li>Escribir letras al dictado.</li>
+                            <li>Formar palabras simples o su nombre.</li>
+                        </ol>
+                    </div>
+
+                </div>
+
+                <!-- Columna Derecha: El paso a paso (ocupa 8 de 12 columnas en PC) -->
+                <div class="md:col-span-8">
+                    <h3 class="text-2xl font-bold text-slate-800 mb-6 flex items-center">
+                        <i data-lucide="footprints" class="text-amber-500 mr-3 h-7 w-7"></i>
+                        ¿Cómo se hace?
+                    </h3>
+                    
+                    <div class="space-y-6">
+                        <!-- Paso 1 -->
+                        <div class="flex">
+                            <div class="flex flex-col items-center mr-4">
+                                <div class="flex items-center justify-center w-10 h-10 rounded-full bg-amber-100 text-amber-600 font-bold border-2 border-amber-300 z-10">1</div>
+                                <div class="h-full w-0.5 bg-amber-200 my-2"></div>
+                            </div>
+                            <div class="pb-6">
+                                <h4 class="text-lg font-bold text-slate-900">Preparar la superficie</h4>
+                                <p class="text-slate-600 mt-1">Coloca una capa delgada del material elegido (sal, harina, etc.) en la bandeja hasta cubrir completamente el fondo.</p>
+                            </div>
+                        </div>
+
+                        <!-- Paso 2 -->
+                        <div class="flex">
+                            <div class="flex flex-col items-center mr-4">
+                                <div class="flex items-center justify-center w-10 h-10 rounded-full bg-amber-100 text-amber-600 font-bold border-2 border-amber-300 z-10">2</div>
+                                <div class="h-full w-0.5 bg-amber-200 my-2"></div>
+                            </div>
+                            <div class="pb-6">
+                                <h4 class="text-lg font-bold text-slate-900">El adulto modela</h4>
+                                <p class="text-slate-600 mt-1">Muestra cómo trazar una letra con el <strong>dedo índice</strong> mientras pronuncias su sonido en voz alta.</p>
+                            </div>
+                        </div>
+
+                        <!-- Paso 3 -->
+                        <div class="flex">
+                            <div class="flex flex-col items-center mr-4">
+                                <div class="flex items-center justify-center w-10 h-10 rounded-full bg-amber-100 text-amber-600 font-bold border-2 border-amber-300 z-10">3</div>
+                                <div class="h-full w-0.5 bg-amber-200 my-2"></div>
+                            </div>
+                            <div class="pb-6">
+                                <h4 class="text-lg font-bold text-slate-900">El turno del niño</h4>
+                                <p class="text-slate-600 mt-1">El niño intenta hacerlo, repitiendo el sonido mientras dibuja la letra. Esto fortalece las habilidades motrices necesarias para la escritura futura.</p>
+                            </div>
+                        </div>
+
+                        <!-- Paso 4 -->
+                        <div class="flex">
+                            <div class="flex flex-col items-center mr-4">
+                                <div class="flex items-center justify-center w-10 h-10 rounded-full bg-amber-500 text-white font-bold shadow-md z-10"><i data-lucide="refresh-ccw" class="h-5 w-5"></i></div>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-bold text-slate-900">Borrar y reintentar (Sin presión)</h4>
+                                <p class="text-slate-600 mt-1">Si se equivoca, simplemente se sacude suavemente la bandeja para "borrar" y volver a empezar. <strong>Todo debe mantenerse en un ambiente de juego y libre de exigencias.</strong></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
         </div>
-    </main>
+    </section>
 
     <!-- Footer -->
     <footer class="bg-slate-900 text-slate-300 py-12">
