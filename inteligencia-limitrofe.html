@@ -9,6 +9,187 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        :root {
+            --bg-color: #f0f8ff; /* Alice Blue - Calme y claro */
+            --card-bg: #ffffff;
+            --text-color: #333333;
+            --accent-color: #4682b4; /* Steel Blue - Seguro y profesional */
+            --correct-color: #32cd32; /* Lime Green - Acierto claro */
+            --wrong-color: #ff4500; /* Orange Red - Error suave */
+            --distractor-color: #e6e6e6; /* Gris claro */
+        }
+
+        #clasificador-rutinas {
+            font-family: 'OpenSans', Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 40px 24px;
+            box-sizing: border-box;
+        }
+
+        #clasificador-rutinas h1 {
+            color: var(--accent-color);
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        #clasificador-rutinas .instrucciones {
+            max-width: 600px;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+        }
+
+        #clasificador-rutinas #banco-pasos {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            width: 100%;
+            max-width: 800px;
+            margin-bottom: 30px;
+            padding: 20px;
+            border: 2px dashed var(--accent-color);
+            border-radius: 15px;
+            background-color: rgba(255, 255, 255, 0.5);
+        }
+
+        #clasificador-rutinas #area-rutina {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            width: 100%;
+            max-width: 600px;
+        }
+
+        #clasificador-rutinas .meta-diaria {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--accent-color);
+            margin-bottom: 10px;
+        }
+
+        #clasificador-rutinas .contenedor-paso {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            width: 100%;
+        }
+
+        #clasificador-rutinas .numero-paso {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: var(--accent-color);
+            width: 30px;
+            text-align: right;
+        }
+
+        #clasificador-rutinas .zona-drop {
+            flex-grow: 1;
+            height: 60px;
+            border: 2px solid #ccc;
+            border-radius: 10px;
+            background-color: var(--card-bg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: border-color 0.2s;
+        }
+
+        #clasificador-rutinas .zona-drop.sobre {
+            border-color: var(--accent-color);
+            background-color: #e6f7ff;
+        }
+
+        #clasificador-rutinas .tarjeta-paso {
+            background-color: var(--card-bg);
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 10px 20px;
+            font-size: 1rem;
+            cursor: grab;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            user-select: none;
+            transition: transform 0.1s, box-shadow 0.1s;
+        }
+
+        #clasificador-rutinas .tarjeta-paso:active {
+            cursor: grabbing;
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        #clasificador-rutinas .tarjeta-paso.arrastrando {
+            opacity: 0.5;
+        }
+
+        #clasificador-rutinas .tarjeta-paso.correcto {
+            border-color: var(--correct-color);
+            color: var(--correct-color);
+            background-color: #f0fff0;
+        }
+
+        #clasificador-rutinas .tarjeta-paso.incorrecto {
+            border-color: var(--wrong-color);
+            color: var(--wrong-color);
+            background-color: #fff0f0;
+            animation: shake 0.3s;
+        }
+
+        @keyframes shake {
+            0% { transform: translateX(0); }
+            25% { transform: translateX(-5px); }
+            50% { transform: translateX(5px); }
+            75% { transform: translateX(-5px); }
+            100% { transform: translateX(0); }
+        }
+
+        @media (max-width: 768px) {
+            #clasificador-rutinas {
+                padding: 24px 16px;
+            }
+
+            #clasificador-rutinas #banco-pasos {
+                padding: 16px;
+                gap: 12px;
+            }
+
+            #clasificador-rutinas .contenedor-paso {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            #clasificador-rutinas .numero-paso {
+                width: auto;
+                text-align: left;
+            }
+
+            #clasificador-rutinas .zona-drop {
+                min-height: 70px;
+            }
+
+            #clasificador-rutinas .tarjeta-paso {
+                width: 100%;
+                max-width: 100%;
+            }
+        }
+
+        #clasificador-rutinas #resultado {
+            margin-top: 30px;
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: var(--correct-color);
+            text-align: center;
+        }
+    </style>
 </head>
 <body class="bg-slate-50 font-sans text-slate-800 min-h-screen">
 
@@ -23,11 +204,8 @@
                         Psicolearning
                     </a>
                 </div>
-            </div>
-        </div>
-
-        <!-- Menú de Escritorio -->
-        <div class="hidden md:flex items-center space-x-8">
+                <!-- Menú de Escritorio -->
+                <div class="hidden md:flex items-center space-x-8">
                     <a href="index.html#inicio" class="text-slate-600 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Inicio</a>
                     <a href="index.html#definicion" class="text-slate-600 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Definición</a>
                     <a href="index.html#conceptos" class="text-slate-600 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Conceptos</a>
@@ -35,8 +213,9 @@
                     <a href="index.html#estrategias" class="text-slate-600 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Estrategias</a>
                     <a href="index.html#mexico" class="text-slate-600 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Contexto México</a>
                     <a href="index.html#rol" class="text-slate-600 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Rol del Psicólogo</a>
-                    <button class="bg-indigo-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-indigo-700 transition-colors">
+                    <button class="bg-indigo-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-indigo-700 transition-colors" onclick="document.getElementById('contacto').scrollIntoView({behavior: 'smooth'});">
                         Contacto
+                        <span class="sr-only">Contacto</span>
                     </button>
                 </div>
 
@@ -52,17 +231,16 @@
         <!-- Menú Móvil (Oculto por defecto) -->
         <div id="menu-movil" class="hidden md:hidden bg-white border-b border-slate-200">
             <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                <a href="index.html#inicio" class="block text-slate-600 hover:text-indigo-600 px-3 py-2 rounded-md text-base font-medium opcion-menu">Inicio</a>
-                <a href="index.html#definicion" class="block text-slate-600 hover:text-indigo-600 px-3 py-2 rounded-md text-base font-medium opcion-menu">Definición</a>
-                <a href="index.html#conceptos" class="block text-slate-600 hover:text-indigo-600 px-3 py-2 rounded-md text-base font-medium opcion-menu">Conceptos</a>
-                <a href="index.html#galeria" class="block text-slate-600 hover:text-indigo-600 px-3 py-2 rounded-md text-base font-medium opcion-menu">Galería</a>
-                <a href="index.html#estrategias" class="block text-slate-600 hover:text-indigo-600 px-3 py-2 rounded-md text-base font-medium opcion-menu">Estrategias</a>
-                <a href="index.html#mexico" class="block text-slate-600 hover:text-indigo-600 px-3 py-2 rounded-md text-base font-medium opcion-menu">Contexto México</a>
-                <a href="index.html#rol" class="block text-slate-600 hover:text-indigo-600 px-3 py-2 rounded-md text-base font-medium opcion-menu">Rol del Psicólogo</a>
+                <a href="#inicio" class="block text-slate-600 hover:text-indigo-600 px-3 py-2 rounded-md text-base font-medium opcion-menu">Inicio</a>
+                <a href="#definicion" class="block text-slate-600 hover:text-indigo-600 px-3 py-2 rounded-md text-base font-medium opcion-menu">Definición</a>
+                <a href="#conceptos" class="block text-slate-600 hover:text-indigo-600 px-3 py-2 rounded-md text-base font-medium opcion-menu">Conceptos</a>
+                <a href="#galeria" class="block text-slate-600 hover:text-indigo-600 px-3 py-2 rounded-md text-base font-medium opcion-menu">Galería</a>
+                <a href="#estrategias" class="block text-slate-600 hover:text-indigo-600 px-3 py-2 rounded-md text-base font-medium opcion-menu">Estrategias</a>
+                <a href="#mexico" class="block text-slate-600 hover:text-indigo-600 px-3 py-2 rounded-md text-base font-medium opcion-menu">Contexto México</a>
+                <a href="#rol" class="block text-slate-600 hover:text-indigo-600 px-3 py-2 rounded-md text-base font-medium opcion-menu">Rol del Psicólogo</a>
             </div>
         </div>
     </nav>
-
     <!-- Contenido Principal -->
     <section id="bandeja-magica" class="py-16 md:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
@@ -191,6 +369,130 @@
         </div>
     </section>
 
+    <section id="clasificador-rutinas" class="mt-16 rounded-3xl shadow-xl border border-slate-200 bg-white">
+        <div class="w-full max-w-6xl mx-auto">
+            <h1>El Clasificador de Rutinas</h1>
+            <p class="instrucciones">Ordena los pasos de la rutina diaria. Arrastra las tarjetas del cuadro superior y suéltalas en el orden correcto abajo.</p>
+
+            <div id="banco-pasos"></div>
+
+            <div id="area-rutina">
+                <div class="meta-diaria" id="meta-diaria">Lavarse las Manos</div>
+                <div class="contenedor-paso">
+                    <div class="numero-paso">1</div>
+                    <div class="zona-drop" data-paso="1"></div>
+                </div>
+                <div class="contenedor-paso">
+                    <div class="numero-paso">2</div>
+                    <div class="zona-drop" data-paso="2"></div>
+                </div>
+                <div class="contenedor-paso">
+                    <div class="numero-paso">3</div>
+                    <div class="zona-drop" data-paso="3"></div>
+                </div>
+                <div class="contenedor-paso">
+                    <div class="numero-paso">4</div>
+                    <div class="zona-drop" data-paso="4"></div>
+                </div>
+            </div>
+
+            <div id="resultado"></div>
+        </div>
+
+        <script>
+            const RUTINA_ACTUAL = {
+                meta: "Cruzar la Calle",
+                pasos_correctos: [
+                    "Llegar a la esquina",
+                    "Mirar a ambos lados",
+                    "Esperar a que no pasen autos",
+                    "Caminar por el cruce peatonal"
+                ],
+                distractores: [
+                    "Ponerse el cinturón",
+                    "Llamar a un taxi"
+                ]
+            };
+
+            const bancoPasos = document.getElementById('banco-pasos');
+            const metaDiaria = document.getElementById('meta-diaria');
+            const zonasDrop = document.querySelectorAll('#clasificador-rutinas .zona-drop');
+            const resultadoDiv = document.getElementById('resultado');
+            const correctColor = getComputedStyle(document.documentElement).getPropertyValue('--correct-color').trim();
+
+            metaDiaria.innerText = RUTINA_ACTUAL.meta;
+
+            const todasLasTarjetas = [...RUTINA_ACTUAL.pasos_correctos, ...RUTINA_ACTUAL.distractores];
+            const tarjetasMezcladas = todasLasTarjetas.sort(() => Math.random() - 0.5);
+
+            tarjetasMezcladas.forEach(textoPaso => {
+                const tarjeta = document.createElement('div');
+                tarjeta.className = 'tarjeta-paso';
+                tarjeta.innerText = textoPaso;
+                tarjeta.draggable = true;
+                bancoPasos.appendChild(tarjeta);
+            });
+
+            let tarjetaArrastrada = null;
+            let pasosCompletadosCount = 0;
+
+            document.addEventListener('dragstart', e => {
+                if (e.target.classList.contains('tarjeta-paso')) {
+                    tarjetaArrastrada = e.target;
+                    tarjetaArrastrada.classList.add('arrastrando');
+                }
+            });
+
+            document.addEventListener('dragend', e => {
+                if (e.target.classList.contains('tarjeta-paso')) {
+                    tarjetaArrastrada.classList.remove('arrastrando');
+                    tarjetaArrastrada = null;
+                }
+            });
+
+            zonasDrop.forEach(zona => {
+                zona.addEventListener('dragover', e => {
+                    e.preventDefault();
+                    if (!zona.querySelector('.tarjeta-paso')) {
+                        zona.classList.add('sobre');
+                    }
+                });
+
+                zona.addEventListener('dragleave', () => {
+                    zona.classList.remove('sobre');
+                });
+
+                zona.addEventListener('drop', e => {
+                    e.preventDefault();
+                    zona.classList.remove('sobre');
+
+                    if (tarjetaArrastrada && !zona.querySelector('.tarjeta-paso')) {
+                        const numeroPasoActual = zona.getAttribute('data-paso');
+                        const textoCorrectoParaEstePaso = RUTINA_ACTUAL.pasos_correctos[numeroPasoActual - 1];
+
+                        if (tarjetaArrastrada.innerText === textoCorrectoParaEstePaso) {
+                            tarjetaArrastrada.classList.add('correcto');
+                            tarjetaArrastrada.draggable = false;
+                            zona.appendChild(tarjetaArrastrada);
+                            pasosCompletadosCount++;
+
+                            if (pasosCompletadosCount === RUTINA_ACTUAL.pasos_correctos.length) {
+                                resultadoDiv.innerText = "¡Excelente secuenciación! Rutina completada con éxito.";
+                                bancoPasos.style.borderColor = correctColor;
+                                bancoPasos.style.borderStyle = "solid";
+                            }
+                        } else {
+                            tarjetaArrastrada.classList.add('incorrecto');
+                            setTimeout(() => {
+                                tarjetaArrastrada.classList.remove('incorrecto');
+                            }, 500);
+                        }
+                    }
+                });
+            });
+        </script>
+    </section>
+
     <!-- Footer -->
     <footer class="bg-slate-900 text-slate-300 py-12">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-3 gap-8">
@@ -220,6 +522,7 @@
                 </ul>
             </div>
             <div>
+                <section id="contacto" class="py-16 md:py-1 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"></section>
                 <h4 class="text-white font-semibold mb-4">Contacto</h4>
                 <p class="text-sm text-slate-400">
                     Universidad de Guadalajara<br />
