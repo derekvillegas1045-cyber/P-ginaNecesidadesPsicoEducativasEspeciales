@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="es" style="scroll-behavior: smooth;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discapacidad Intelectual - Psicolearning</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .hero-panel { background: linear-gradient(135deg, #7c3aed 0%, #ec4899 40%, #f97316 100%); }
+        .detail-card { border-radius: 28px; box-shadow: 0 28px 90px rgba(15,23,42,.12); }
+        .pill { display: inline-flex; align-items: center; gap: .6rem; padding: .75rem 1.25rem; border-radius: 9999px; font-weight: 800; }
+        .step-badge { background: rgba(255,255,255,.12); backdrop-filter: blur(10px); }
+    </style>
+</head>
+<body class="bg-slate-50 font-sans text-slate-900 min-h-screen">
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center gap-3">
+                    <i data-lucide="brain" class="h-8 w-8 text-purple-600"></i>
+                    <a href="index.html#inicio" class="text-xl font-bold text-slate-900 hover:text-purple-600 transition">Psicolearning</a>
+                </div>
+                <div class="hidden md:flex items-center gap-6">
+                    <a href="#introduccion" class="text-slate-600 hover:text-purple-600">Introducción</a>
+                    <a href="#signos" class="text-slate-600 hover:text-purple-600">Signos</a>
+                    <a href="#barreras" class="text-slate-600 hover:text-purple-600">Barreras</a>
+                    <a href="#estrategias" class="text-slate-600 hover:text-purple-600">Estrategias</a>
+                    <button class="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition" onclick="window.location='index.html';">Volver</button>
+                </div>
+                <div class="md:hidden">
+                    <button id="btn-menu" class="text-slate-600 hover:text-slate-900 focus:outline-none"><i data-lucide="menu" class="h-6 w-6"></i></button>
+                </div>
+            </div>
+        </div>
+        <div id="menu-movil" class="hidden bg-white border-t border-slate-200 md:hidden">
+            <div class="px-4 py-3 space-y-2">
+                <a href="#introduccion" class="block text-slate-600 hover:text-purple-600">Introducción</a>
+                <a href="#signos" class="block text-slate-600 hover:text-purple-600">Signos</a>
+                <a href="#barreras" class="block text-slate-600 hover:text-purple-600">Barreras</a>
+                <a href="#estrategias" class="block text-slate-600 hover:text-purple-600">Estrategias</a>
+                <button class="w-full text-left text-purple-600 font-semibold" onclick="window.location='index.html';">Volver al inicio</button>
+            </div>
+        </div>
+    </nav>
+    <header class="hero-panel text-white py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid gap-12 lg:grid-cols-2 items-center">
+                <div>
+                    <span class="pill bg-white/15 border border-white/20 text-white">Discapacidad Intelectual</span>
+                    <h1 class="mt-6 text-4xl md:text-5xl font-extrabold tracking-tight">Apoyar el aprendizaje concreto con recursos reales</h1>
+                    <p class="mt-6 text-lg leading-8 text-slate-100 max-w-2xl">
+                        La discapacidad intelectual exige estrategias muy prácticas y ejemplos tangibles. El objetivo es que cada concepto cobre sentido a través de la experiencia y la repetición.
+                    </p>
+                </div>
+                <div class="grid gap-6">
+                    <div class="detail-card p-8 bg-white/90 text-slate-900 backdrop-blur-sm">
+                        <h2 class="text-2xl font-bold mb-3">Aprender desde lo concreto</h2>
+                        <p class="text-slate-600">El cerebro con DI procesa mejor lo que puede ver, tocar y experimentar de forma directa.</p>
+                    </div>
+                    <div class="detail-card p-8 bg-white/90 text-slate-900 backdrop-blur-sm">
+                        <h2 class="text-2xl font-bold mb-3">Independencia real</h2>
+                        <p class="text-slate-600">La meta no es solo rendimiento académico, sino que el estudiante gane autonomía en su vida diaria.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-20">
+        <section id="introduccion" class="grid gap-10 lg:grid-cols-2 items-start">
+            <article class="bg-white p-10 rounded-[32px] detail-card border border-slate-200">
+                <h2 class="text-3xl font-bold text-slate-900 mb-5">Introducción: ¿Qué es?</h2>
+                <p class="text-slate-600 leading-relaxed mb-4">La discapacidad intelectual es una condición del neurodesarrollo que impacta dos grandes áreas: el funcionamiento intelectual (aprender, razonar, resolver problemas) y la conducta adaptativa (habilidades prácticas del día a día, como comunicarse o cuidarse a sí mismo).</p>
+                <p class="text-slate-600 leading-relaxed">El cerebro con DI procesa el mundo de forma muy concreta. Las ideas abstractas, las metáforas o los conceptos que no se pueden ver ni tocar (como el paso del tiempo o el valor del dinero) representan un gasto de energía mental gigantesco.</p>
+            </article>
+            <div class="space-y-6">
+                <div class="bg-purple-600 text-white p-8 rounded-[32px] shadow-2xl">
+                    <h3 class="text-2xl font-bold mb-4">Cómo piensa el cerebro</h3>
+                    <p class="leading-relaxed">Prefiere información clara, directa y asociada a objetos o acciones concretas. Mientras menos interpretación libre tenga que hacer, mejor funcionará.</p>
+                </div>
+                <div class="bg-slate-50 p-8 rounded-[32px] border border-slate-200">
+                    <h3 class="text-xl font-bold text-slate-900 mb-4">Clave de apoyo</h3>
+                    <ul class="list-disc pl-5 space-y-3 text-slate-600">
+                        <li>Usar ejemplos reales.</li>
+                        <li>Mostrar antes de explicar.</li>
+                        <li>Repetir en contextos distintos.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section id="signos">
+            <div class="bg-gradient-to-r from-fuchsia-600 via-violet-600 to-indigo-600 text-white rounded-[32px] p-10 shadow-2xl">
+                <div class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+                    <div>
+                        <p class="text-sm uppercase tracking-[0.4em] text-purple-200">Signos y Síntomas</p>
+                        <h2 class="mt-4 text-3xl md:text-4xl font-bold">¿Cómo se puede detectar?</h2>
+                    </div>
+                    <div class="rounded-3xl bg-white/10 px-5 py-4 text-slate-100 max-w-md">
+                        <p>Compara el desarrollo con sus pares: la independencia y la rapidez para aprender nuevas habilidades son claves.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="grid gap-6 mt-10 sm:grid-cols-2 xl:grid-cols-3">
+                <div class="bg-white p-8 rounded-[32px] detail-card border border-slate-200">
+                    <h3 class="text-xl font-semibold text-slate-900 mb-3">Hitos tardíos</h3>
+                    <p class="text-slate-600">Tardaron más en sentarse, gatear, caminar o hablar que sus compañeros.</p>
+                </div>
+                <div class="bg-white p-8 rounded-[32px] detail-card border border-slate-200">
+                    <h3 class="text-xl font-semibold text-slate-900 mb-3">Causa y efecto</h3>
+                    <p class="text-slate-600">Les cuesta entender consecuencias, como que asomarse por la ventana puede ser peligroso pese a múltiples advertencias.</p>
+                </div>
+                <div class="bg-white p-8 rounded-[32px] detail-card border border-slate-200">
+                    <h3 class="text-xl font-semibold text-slate-900 mb-3">Memoria a corto plazo</h3>
+                    <p class="text-slate-600">Olvidan una instrucción sencilla si se distraen en el camino.</p>
+                </div>
+                <div class="bg-white p-8 rounded-[32px] detail-card border border-slate-200">
+                    <h3 class="text-xl font-semibold text-slate-900 mb-3">Generalizar</h3>
+                    <p class="text-slate-600">Pueden sumar con manzanas en la escuela, pero no aplicar esa suma al pagar en el supermercado.</p>
+                </div>
+                <div class="bg-white p-8 rounded-[32px] detail-card border border-slate-200">
+                    <h3 class="text-xl font-semibold text-slate-900 mb-3">Inmadurez social</h3>
+                    <p class="text-slate-600">Sus juegos e intereses suelen parecerse más a los de niños más pequeños que a los de su edad cronológica.</p>
+                </div>
+            </div>
+        </section>
+        <section id="barreras" class="space-y-10">
+            <div class="text-center">
+                <p class="text-purple-600 uppercase tracking-[0.35em] font-semibold">Barreras académicas</p>
+                <h2 class="mt-4 text-3xl md:text-4xl font-extrabold text-slate-900">Retos en el aprendizaje</h2>
+            </div>
+            <div class="grid gap-6 lg:grid-cols-2">
+                <div class="bg-white p-10 rounded-[32px] detail-card border border-slate-200">
+                    <h3 class="text-2xl font-bold text-slate-900 mb-5">Ritmo de la clase</h3>
+                    <p class="text-slate-600 leading-relaxed">El maestro borra el pizarrón y pasa al siguiente tema cuando el alumno con DI apenas está terminando de procesar la primera parte.</p>
+                </div>
+                <div class="bg-white p-10 rounded-[32px] detail-card border border-slate-200">
+                    <h3 class="text-2xl font-bold text-slate-900 mb-5">Conceptos intangibles</h3>
+                    <p class="text-slate-600 leading-relaxed">Aprender historia antigua, fracciones o reglas gramaticales complejas carece de sentido sin un referente concreto.</p>
+                </div>
+                <div class="bg-white p-10 rounded-[32px] detail-card border border-slate-200">
+                    <h3 class="text-2xl font-bold text-slate-900 mb-5">Lectura mecánica</h3>
+                    <p class="text-slate-600 leading-relaxed">Muchos pueden decodificar letras, pero al terminar el párrafo no saben de qué trató la historia.</p>
+                </div>
+                <div class="bg-white p-10 rounded-[32px] detail-card border border-slate-200">
+                    <h3 class="text-2xl font-bold text-slate-900 mb-5">Frustración y autoestima</h3>
+                    <p class="text-slate-600 leading-relaxed">Al ver que sus compañeros avanzan más rápido, pueden sentirse derrotados y dejar de intentarlo.</p>
+                </div>
+            </div>
+        </section>
+        <section id="estrategias" class="grid gap-10 xl:grid-cols-2">
+            <div class="bg-gradient-to-br from-orange-500 to-pink-500 text-white rounded-[32px] p-10 shadow-2xl">
+                <div class="flex items-center gap-3 mb-6">
+                    <span class="step-badge inline-flex rounded-full px-4 py-2 text-sm font-semibold">En Casa</span>
+                </div>
+                <div class="space-y-6">
+                    <div>
+                        <h3 class="text-2xl font-bold">Fomentar la autonomía</h3>
+                        <p class="mt-3 text-slate-100 leading-relaxed">El objetivo es que sean lo más independientes posible. Enseña paso a paso habilidades para la vida diaria: vestirse, preparar un sándwich, usar el transporte.</p>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold">Modelado y repetición</h3>
+                        <p class="mt-3 text-slate-100 leading-relaxed">No basta con explicar, hay que hacerlo junto con ellos muchas veces: yo lo hago, lo hacemos juntos, tú lo haces.</p>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold">Responsabilidades reales</h3>
+                        <p class="mt-3 text-slate-100 leading-relaxed">Que pongan la mesa o alimenten a la mascota fortalece su autoestima y reafirma su valor en la familia.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-white rounded-[32px] detail-card border border-slate-200 p-10">
+                <div class="mb-8">
+                    <span class="inline-flex items-center rounded-full bg-cyan-100 px-4 py-2 text-cyan-800 text-sm font-semibold">En la escuela</span>
+                </div>
+                <div class="space-y-6">
+                    <div>
+                        <h3 class="text-2xl font-bold text-slate-900">Ajustes curriculares</h3>
+                        <p class="mt-3 text-slate-600 leading-relaxed">La meta de matemáticas debe ser aprender a manejar dinero y dar cambio, no forzar álgebra.</p>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-slate-900">Material concreto</h3>
+                        <p class="mt-3 text-slate-600 leading-relaxed">Usar monedas reales, fichas o experimentos táctiles, no solo teoría de libro.</p>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-slate-900">Instrucciones fragmentadas</h3>
+                        <p class="mt-3 text-slate-600 leading-relaxed">Dar una orden a la vez. Primero: "Saquen el libro rojo". Esperar. Luego: "Abran la página 20".</p>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-slate-900">Evaluar el progreso personal</h3>
+                        <p class="mt-3 text-slate-600 leading-relaxed">Califica según sus propios avances y celebra lo que hace hoy mejor que hace un mes.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="bg-slate-900 text-slate-300 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-3 gap-8">
+            <div>
+                <h3 class="text-white text-lg font-bold mb-4 flex items-center"><i data-lucide="brain" class="h-5 w-5 mr-2"></i> Psicolearning</h3>
+                <p class="text-sm text-slate-400">Recursos prácticos y accesibles para entender y apoyar la discapacidad intelectual.</p>
+            </div>
+            <div>
+                <h4 class="text-white font-semibold mb-4">Enlaces</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="index.html" class="hover:text-white">Inicio</a></li>
+                    <li><a href="index.html#estrategias" class="hover:text-white">Recursos</a></li>
+                    <li><a href="index.html#mexico" class="hover:text-white">Contexto México</a></li>
+                    <li><a href="index.html#rol" class="hover:text-white">Rol del Psicólogo</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-semibold mb-4">Contacto</h4>
+                <p class="text-sm text-slate-400">Universidad de Guadalajara<br>Guadalajara, México<br>Licenciatura en Psicología<br>Necesidades Psicoeducativas Especiales<br>psicolearning7@gmail.com</p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        lucide.createIcons();
+        const btnMenu = document.getElementById('btn-menu');
+        const menuMovil = document.getElementById('menu-movil');
+        let menuAbierto = false;
+        btnMenu.addEventListener('click', () => {
+            menuAbierto = !menuAbierto;
+            menuMovil.classList.toggle('hidden', !menuAbierto);
+        });
+    </script>
+</body>
+</html>

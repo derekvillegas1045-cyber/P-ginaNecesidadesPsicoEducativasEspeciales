@@ -1,352 +1,173 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es" style="scroll-behavior: smooth;">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Altas Capacidades - Psicolearning</title>
-    
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .hero-panel { background: linear-gradient(135deg, #7c3aed 0%, #3b82f6 100%); }
+        .detail-card { border-radius: 30px; box-shadow: 0 28px 80px rgba(15,23,42,.08); }
+        .pill { display: inline-flex; align-items: center; gap: .5rem; padding: .75rem 1.1rem; border-radius: 9999px; font-weight: 700; }
+    </style>
 </head>
 <body class="bg-slate-50 font-sans text-slate-800 min-h-screen">
-
-    <!-- Navegación -->
-    <nav class="bg-white shadow-md sticky top-0 z-50">
+    <nav class="bg-white shadow sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-16">
-                <!-- Logo -->
-                <div class="flex items-center">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center gap-3">
                     <i data-lucide="brain" class="h-8 w-8 text-indigo-600"></i>
-                    <a href="index.html#inicio" class="ml-2 text-xl font-bold text-slate-900 hover:text-indigo-600 transition-colors">
-                        Psicolearning
-                    </a>
+                    <a href="index.html#inicio" class="text-xl font-bold text-slate-900 hover:text-indigo-600 transition">Psicolearning</a>
                 </div>
-
-                <!-- Menú de Escritorio -->
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="index.html#inicio" class="text-slate-600 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Inicio</a>
-                    <a href="index.html#definicion" class="text-slate-600 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Definición</a>
-                    <a href="index.html#conceptos" class="text-slate-600 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Conceptos</a>
-                    <a href="index.html#galeria" class="text-slate-600 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Galería</a>
-                    <a href="index.html#estrategias" class="text-slate-600 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Estrategias</a>
-                    <a href="index.html#mexico" class="text-slate-600 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Contexto México</a>
-                    <a href="index.html#rol" class="text-slate-600 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Rol del Psicólogo</a>
-                    <button class="bg-indigo-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-indigo-700 transition-colors" onclick="document.getElementById('contacto').scrollIntoView({behavior: 'smooth'});">
-                        Contacto
-                        <span class="sr-only">Contacto</span>
-                    </button>
+                <div class="hidden md:flex items-center gap-6">
+                    <a href="index.html#inicio" class="text-slate-600 hover:text-indigo-600">Inicio</a>
+                    <a href="index.html#estrategias" class="text-slate-600 hover:text-indigo-600">Recursos</a>
+                    <a href="index.html#rol" class="text-slate-600 hover:text-indigo-600">Rol del Psicólogo</a>
+                    <button class="bg-violet-600 text-white px-4 py-2 rounded-lg hover:bg-violet-700 transition" onclick="window.location='index.html';">Volver</button>
                 </div>
-
-                <!-- Botón de Menú Móvil -->
-                <div class="md:hidden flex items-center">
-                    <button id="btn-menu" class="text-slate-600 hover:text-slate-900 focus:outline-none">
-                        <i data-lucide="menu" id="icono-menu" class="h-6 w-6"></i>
-                    </button>
+                <div class="md:hidden">
+                    <button id="btn-menu" class="text-slate-600 hover:text-slate-900 focus:outline-none"><i data-lucide="menu" class="h-6 w-6"></i></button>
                 </div>
             </div>
         </div>
-
-        <!-- Menú Móvil (Oculto por defecto) -->
-        <div id="menu-movil" class="hidden md:hidden bg-white border-b border-slate-200">
-            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                <a href="index.html#inicio" class="block text-slate-600 hover:text-indigo-600 px-3 py-2 rounded-md text-base font-medium opcion-menu">Inicio</a>
-                <a href="index.html#definicion" class="block text-slate-600 hover:text-indigo-600 px-3 py-2 rounded-md text-base font-medium opcion-menu">Definición</a>
-                <a href="index.html#conceptos" class="block text-slate-600 hover:text-indigo-600 px-3 py-2 rounded-md text-base font-medium opcion-menu">Conceptos</a>
-                <a href="index.html#galeria" class="block text-slate-600 hover:text-indigo-600 px-3 py-2 rounded-md text-base font-medium opcion-menu">Galería</a>
-                <a href="index.html#estrategias" class="block text-slate-600 hover:text-indigo-600 px-3 py-2 rounded-md text-base font-medium opcion-menu">Estrategias</a>
-                <a href="index.html#mexico" class="block text-slate-600 hover:text-indigo-600 px-3 py-2 rounded-md text-base font-medium opcion-menu">Contexto México</a>
-                <a href="index.html#rol" class="block text-slate-600 hover:text-indigo-600 px-3 py-2 rounded-md text-base font-medium opcion-menu">Rol del Psicólogo</a>
+        <div id="menu-movil" class="hidden bg-white border-t border-slate-200 md:hidden">
+            <div class="px-4 py-3 space-y-2">
+                <a href="index.html#inicio" class="block text-slate-600 hover:text-indigo-600">Inicio</a>
+                <a href="index.html#estrategias" class="block text-slate-600 hover:text-indigo-600">Recursos</a>
+                <a href="index.html#rol" class="block text-slate-600 hover:text-indigo-600">Rol del Psicólogo</a>
+                <button class="w-full text-left text-violet-600 font-semibold" onclick="window.location='index.html';">Volver a la página principal</button>
             </div>
         </div>
     </nav>
-
-    <!-- Contenido Principal -->
-    <!-- ======================================================================== -->
-    <!-- COPIA DESDE AQUÍ: SECCIÓN DE ESTRATEGIAS PARA PEGAR EN TU PROYECTO       -->
-    <!-- ======================================================================== -->
-    <section id="estrategias" class="py-16 md:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        <div class="text-center mb-16">
-            <h2 class="text-base text-cyan-600 font-semibold tracking-wide uppercase">Guía Práctica</h2>
-            <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-slate-900 sm:text-4xl">
-                Estrategias de Intervención en Casa
-            </p>
-            <p class="mt-4 max-w-2xl text-xl text-slate-500 mx-auto">
-                Actividades diseñadas para acompañar el desarrollo cognitivo, emocional y social.
-            </p>
+    <header class="hero-panel text-white py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid gap-10 lg:grid-cols-2 items-center">
+                <div>
+                    <span class="pill" style="background: rgba(124, 58, 237, .16); color: #6d28d9;">Altas Capacidades</span>
+                    <h1 class="mt-6 text-4xl md:text-5xl font-extrabold tracking-tight">Equilibrar el potencial con apoyo emocional</h1>
+                    <p class="mt-5 text-lg leading-8 text-slate-100 max-w-2xl">El desafío de las altas capacidades es acompañar al talento con estructura, reconocimiento y oportunidades para que el aprendizaje sea significativo.</p>
+                </div>
+                <div class="space-y-4">
+                    <div class="detail-card p-6 bg-white text-slate-900">
+                        <h2 class="text-xl font-semibold">Creatividad guiada</h2>
+                        <p class="mt-3 text-slate-600">Organizar ideas ayuda a convertir el entusiasmo en resultados concretos.</p>
+                    </div>
+                    <div class="detail-card p-6 bg-white text-slate-900">
+                        <h2 class="text-xl font-semibold">Rutinas seguras</h2>
+                        <p class="mt-3 text-slate-600">Estructura y límites saludables generan calma y permiten un aprendizaje más sostenido.</p>
+                    </div>
+                </div>
+            </div>
         </div>
-
-        <!-- Contenedor Principal de las 7 Áreas -->
-        <div class="space-y-12">
-
-            <!-- 1. Afectividad y Comunicación -->
-            <div class="bg-white rounded-2xl shadow-lg overflow-hidden border-l-8 border-cyan-500 hover:shadow-xl transition-shadow duration-300">
-                <div class="p-8">
-                    <h3 class="text-2xl font-bold flex items-center mb-4 text-slate-800">
-                        <i data-lucide="heart-handshake" class="mr-3 text-cyan-500 h-8 w-8"></i> 
-                        1. Afectividad y Comunicación
-                    </h3>
-                    <div class="bg-cyan-50 border border-cyan-100 p-4 rounded-lg mb-6 text-slate-700">
-                        <strong class="text-cyan-800">Objetivo:</strong> Validar sus emociones (ya que suelen tener disincronía o hipersensibilidad) y canalizar su alta demanda cognitiva.
+    </header>
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-16">
+        <section class="grid gap-10 lg:grid-cols-2">
+            <article class="bg-white detail-card p-10 border border-slate-200">
+                <h2 class="text-3xl font-bold text-slate-900 mb-4">Comprender a los estudiantes con altas capacidades</h2>
+                <p class="text-slate-600 leading-relaxed mb-4">No todos los estudiantes superdotados se adaptan fácilmente. Muchos tienen sensibilidad emocional, perfeccionismo o aburrimiento que afectan su motivación.</p>
+                <p class="text-slate-600 leading-relaxed">El papel del psicólogo es diseñar apoyos que estimulen su pensamiento sin generar presión excesiva.</p>
+            </article>
+            <div class="space-y-6">
+                <div class="bg-slate-50 p-8 rounded-3xl border border-slate-200">
+                    <h3 class="text-xl font-semibold text-slate-900 mb-3">Potenciar fortalezas</h3>
+                    <p class="text-slate-600">Transformar intereses en proyectos personales con metas claras y realistas.</p>
+                </div>
+                <div class="grid gap-4 sm:grid-cols-2">
+                    <div class="bg-slate-50 p-6 rounded-3xl border border-slate-200">
+                        <h4 class="font-semibold text-slate-900">Curiosidad estructurada</h4>
+                        <p class="mt-3 text-slate-600">Ofrecer temas profundos en bloques de trabajo manejables.</p>
                     </div>
-                    <div class="grid md:grid-cols-2 gap-6">
-                        <div class="border border-slate-200 rounded-xl p-5 hover:border-cyan-300 transition-colors">
-                            <h4 class="font-bold text-lg text-slate-900 mb-2">"El Buzón de las Preguntas Infinitas"</h4>
-                            <p class="text-slate-600 text-sm leading-relaxed"><strong class="text-slate-800">Cómo se hace:</strong> Colocar una caja decorada en casa. Cuando el niño tenga una duda compleja en un momento donde los padres están ocupados (ej. "¿De qué está hecho un agujero negro?"), la anota en un papel y la mete al buzón. Por la noche, se dedican 15 minutos exclusivos para abrir el buzón, leer la pregunta y buscar la respuesta juntos o debatirla.</p>
-                        </div>
-                        <div class="border border-slate-200 rounded-xl p-5 hover:border-cyan-300 transition-colors">
-                            <h4 class="font-bold text-lg text-slate-900 mb-2">"El chequeo emocional del día"</h4>
-                            <p class="text-slate-600 text-sm leading-relaxed"><strong class="text-slate-800">Cómo se hace:</strong> En la cena, en lugar de preguntar "¿Cómo te fue?", instaurar la rutina de "Dime algo que te hizo feliz, algo que te frustró y algo que aprendiste hoy". Validar sus frustraciones con contacto físico (tomar la mano, un beso en la frente) sin minimizar sus sentimientos.</p>
-                        </div>
+                    <div class="bg-slate-50 p-6 rounded-3xl border border-slate-200">
+                        <h4 class="font-semibold text-slate-900">Tiempo de descanso</h4>
+                        <p class="mt-3 text-slate-600">Pausas programadas evitan la sobrecarga cognitiva.</p>
                     </div>
                 </div>
             </div>
-
-            <!-- 2. Estimulación y Enriquecimiento -->
-            <div class="bg-white rounded-2xl shadow-lg overflow-hidden border-l-8 border-indigo-500 hover:shadow-xl transition-shadow duration-300">
-                <div class="p-8">
-                    <h3 class="text-2xl font-bold flex items-center mb-4 text-slate-800">
-                        <i data-lucide="lightbulb" class="mr-3 text-indigo-500 h-8 w-8"></i> 
-                        2. Estimulación y Enriquecimiento
-                    </h3>
-                    <div class="bg-indigo-50 border border-indigo-100 p-4 rounded-lg mb-6 text-slate-700">
-                        <strong class="text-indigo-800">Objetivo:</strong> Nutrir su intelecto sin caer en la sobreexigencia académica (burnout).
-                    </div>
-                    <div class="grid md:grid-cols-2 gap-6">
-                        <div class="border border-slate-200 rounded-xl p-5 hover:border-indigo-300 transition-colors">
-                            <h4 class="font-bold text-lg text-slate-900 mb-2">"Viernes de Expertos"</h4>
-                            <p class="text-slate-600 text-sm leading-relaxed"><strong class="text-slate-800">Cómo se hace:</strong> Cada viernes, el niño elige un tema que le apasione (dinosaurios, programación, astronomía). La familia dedica una hora a explorar ese tema: pueden ver un documental, aprender 5 palabras en otro idioma o buscar música de la época.</p>
-                        </div>
-                        <div class="border border-slate-200 rounded-xl p-5 hover:border-indigo-300 transition-colors">
-                            <h4 class="font-bold text-lg text-slate-900 mb-2">"El Rincón del Descubrimiento"</h4>
-                            <p class="text-slate-600 text-sm leading-relaxed"><strong class="text-slate-800">Cómo se hace:</strong> Habilitar un espacio físico en casa con materiales de acceso libre: libros variados, un teclado musical, kits de robótica básica o material de arte. La regla es que no hay evaluaciones ni resultados esperados; es solo para explorar de forma autodirigida.</p>
-                        </div>
-                        <div class="border border-slate-200 rounded-xl p-5 hover:border-indigo-300 transition-colors">
-                            <h4 class="font-bold text-lg text-slate-900 mb-2">"Mini Proyecto de Investigación"</h4>
-                            <p class="text-slate-600 text-sm leading-relaxed"><strong class="text-slate-800">Cómo se hace:</strong> El cuidador le pedirá al niño que elija un tema deinterés. Ya escogido el tema se recabará información en libros, internet, documentales, cualquier cosa. El niño deberá escribir o dibujar 3 datos importantes que haya aprendido y esto será para explicarlo a resto de la familia. Los padres no solamente son testigos, deberán hacer preguntas para ampliar la reflexión.</p>
-                        </div>
-                    </div>
+        </section>
+        <section class="bg-white detail-card p-10 rounded-[32px] border border-slate-200">
+            <div class="grid gap-8 lg:grid-cols-3">
+                <div class="bg-violet-50 p-8 rounded-3xl border border-violet-100">
+                    <h3 class="text-xl font-semibold text-violet-900 mb-4">Afectividad</h3>
+                    <p class="text-slate-600">Reconocer emociones intensas y apoyarlas con escucha activa.</p>
+                </div>
+                <div class="bg-slate-50 p-8 rounded-3xl border border-slate-200">
+                    <h3 class="text-xl font-semibold text-slate-900 mb-4">Motivación</h3>
+                    <p class="text-slate-600">Plantear desafíos con significado personal, no solo con dificultad académica.</p>
+                </div>
+                <div class="bg-emerald-50 p-8 rounded-3xl border border-emerald-100">
+                    <h3 class="text-xl font-semibold text-emerald-900 mb-4">Autonomía</h3>
+                    <p class="text-slate-600">Promover decisiones sobre cómo y cuándo trabajar.</p>
                 </div>
             </div>
-
-            <!-- 3. Establecer Límites y Disciplina -->
-            <div class="bg-white rounded-2xl shadow-lg overflow-hidden border-l-8 border-emerald-500 hover:shadow-xl transition-shadow duration-300">
-                <div class="p-8">
-                    <h3 class="text-2xl font-bold flex items-center mb-4 text-slate-800">
-                        <i data-lucide="shield-check" class="mr-3 text-emerald-500 h-8 w-8"></i> 
-                        3. Establecer Límites y Disciplina
-                    </h3>
-                    <div class="bg-emerald-50 border border-emerald-100 p-4 rounded-lg mb-6 text-slate-700">
-                        <strong class="text-emerald-800">Objetivo:</strong> Darles estructura y seguridad a través de normas lógicas y no autoritarias.
-                    </div>
-                    <div class="grid md:grid-cols-2 gap-6">
-                        <div class="border border-slate-200 rounded-xl p-5 hover:border-emerald-300 transition-colors">
-                            <h4 class="font-bold text-lg text-slate-900 mb-2">"El Contrato Familiar de Convivencia"</h4>
-                            <p class="text-slate-600 text-sm leading-relaxed"><strong class="text-slate-800">Cómo se hace:</strong> Sentarse en familia y redactar juntos un reglamento visible. Se negocia en lugar de imponer. Se establecen rutinas y se definen las consecuencias lógicas de antemano (ej. pérdida de tiempo de pantalla si no hay puntualidad). Al final, todos lo firman.</p>
-                        </div>
-                        <div class="border border-slate-200 rounded-xl p-5 hover:border-emerald-300 transition-colors">
-                            <h4 class="font-bold text-lg text-slate-900 mb-2">"El Semáforo de la Escucha"</h4>
-                            <p class="text-slate-600 text-sm leading-relaxed"><strong class="text-slate-800">Cómo se hace:</strong> Usar un objeto físico (un "bastón de la palabra" o tarjeta verde). Solo quien tiene el objeto puede hablar. Esto entrena la escucha activa y el control de impulsos, evitando que el niño interrumpa constantemente por su rapidez mental.</p>
-                        </div>
-                    </div>
+        </section>
+        <section class="grid gap-10 lg:grid-cols-2">
+            <div class="bg-slate-100 p-10 rounded-[32px] detail-card border border-slate-200">
+                <h2 class="text-3xl font-bold text-slate-900 mb-4">Estrategias efectivas</h2>
+                <ul class="space-y-4 text-slate-600">
+                    <li><strong>Aprendizaje por proyectos:</strong> trabajar temas profundos con entregables claros.</li>
+                    <li><strong>Mapas mentales:</strong> organizar información visualmente.</li>
+                    <li><strong>Retroalimentación positiva:</strong> valorar el proceso tanto como el resultado.</li>
+                    <li><strong>Flexibilidad:</strong> adaptar el ritmo según sus necesidades.</li>
+                </ul>
+            </div>
+            <div class="bg-white p-10 rounded-[32px] detail-card border border-slate-200">
+                <h2 class="text-3xl font-bold text-slate-900 mb-4">Actividad recomendada</h2>
+                <p class="text-slate-600 leading-relaxed mb-4">Una tarjeta de ideas para explorar cada semana. El estudiante elige un tema, investiga y comparte un hallazgo con el grupo.</p>
+                <div class="bg-violet-50 p-6 rounded-3xl border border-violet-100">
+                    <h3 class="text-lg font-semibold text-violet-900">Objetivo</h3>
+                    <p class="mt-2 text-slate-600">Promover pensamiento crítico sin generar ansiedad por la calificación.</p>
                 </div>
             </div>
-
-            <!-- 4. Autonomía y Curiosidad -->
-            <div class="bg-white rounded-2xl shadow-lg overflow-hidden border-l-8 border-orange-500 hover:shadow-xl transition-shadow duration-300">
-                <div class="p-8">
-                    <h3 class="text-2xl font-bold flex items-center mb-4 text-slate-800">
-                        <i data-lucide="compass" class="mr-3 text-orange-500 h-8 w-8"></i> 
-                        4. Autonomía y Curiosidad
-                    </h3>
-                    <div class="bg-orange-50 border border-orange-100 p-4 rounded-lg mb-6 text-slate-700">
-                        <strong class="text-orange-800">Objetivo:</strong> Fomentar la independencia y, sobre todo, la tolerancia a la frustración.
-                    </div>
-                    <div class="grid md:grid-cols-2 gap-6">
-                        <div class="border border-slate-200 rounded-xl p-5 hover:border-orange-300 transition-colors">
-                            <h4 class="font-bold text-lg text-slate-900 mb-2">"El Proyecto Mentor"</h4>
-                            <p class="text-slate-600 text-sm leading-relaxed"><strong class="text-slate-800">Cómo se hace:</strong> Cuando el niño quiera construir algo o investigar un tema, los padres asumen el rol de "asistentes", no de directores. Le ayudan a hacer un cronograma visual: ¿Qué necesitamos? ¿Qué paso va primero? El niño debe tomar las decisiones.</p>
-                        </div>
-                        <div class="border border-slate-200 rounded-xl p-5 hover:border-orange-300 transition-colors">
-                            <h4 class="font-bold text-lg text-slate-900 mb-2">"El Diario del Fracaso Científico"</h4>
-                            <p class="text-slate-600 text-sm leading-relaxed"><strong class="text-slate-800">Cómo se hace:</strong> Tener una libreta donde documenten sus experimentos. Dedicar una sección obligatoria a: "¿Qué salió mal hoy y cómo lo soluciono mañana?". El objetivo es celebrar el error como parte del aprendizaje y desarmar el perfeccionismo paralizante.</p>
-                        </div>
-                    </div>
+        </section>
+        <section class="bg-white detail-card p-10 rounded-[32px] border border-slate-200">
+            <h2 class="text-3xl font-bold text-slate-900 mb-4">Rol del psicólogo</h2>
+            <div class="grid gap-6 sm:grid-cols-3">
+                <div class="bg-slate-50 p-6 rounded-3xl border border-slate-200">
+                    <h3 class="font-semibold text-slate-900 mb-2">Evaluar</h3>
+                    <p class="text-slate-600 text-sm">Identificar fortalezas y necesidades en el aprendizaje.</p>
+                </div>
+                <div class="bg-slate-50 p-6 rounded-3xl border border-slate-200">
+                    <h3 class="font-semibold text-slate-900 mb-2">Acompañar</h3>
+                    <p class="text-slate-600 text-sm">Diseñar apoyos con la familia y la escuela.</p>
+                </div>
+                <div class="bg-slate-50 p-6 rounded-3xl border border-slate-200">
+                    <h3 class="font-semibold text-slate-900 mb-2">Guiar</h3>
+                    <p class="text-slate-600 text-sm">Fomentar metas personales y bienestar emocional.</p>
                 </div>
             </div>
-
-            <!-- 5. Desarrollo Social y Creativo -->
-            <div class="bg-white rounded-2xl shadow-lg overflow-hidden border-l-8 border-pink-500 mb-12">
-                <div class="p-8">
-                    <h3 class="text-2xl font-bold flex items-center mb-4 text-slate-800">
-                        <i data-lucide="users" class="mr-3 text-pink-500 h-8 w-8"></i> 
-                        5. Desarrollo Social y Creativo
-                    </h3>
-                    <div class="bg-pink-50 border border-pink-100 p-4 rounded-lg mb-6 text-slate-700">
-                        <strong class="text-pink-800">Objetivo:</strong> Evitar el aislamiento social conectándolos con sus pares intelectuales.
-                    </div>
-                    
-                    <!-- EL CAMBIO ESTÁ AQUÍ: "lg:grid-cols-3" asegura que caben las 3 tarjetas en una sola línea en PC -->
-                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
-                        
-                        <!-- Tarjeta 1 -->
-                        <!-- Se agregó "flex flex-col h-full" y "flex-grow" al texto para alinear todo -->
-                        <div class="border border-slate-200 rounded-xl p-5 hover:border-pink-300 transition-colors flex flex-col h-full">
-                            <h4 class="font-bold text-lg text-slate-900 mb-2">"Tardes de Juegos Estratégicos"</h4>
-                            <p class="text-slate-600 text-sm leading-relaxed flex-grow"><strong class="text-slate-800">Cómo se hace:</strong> Organizar reuniones de fin de semana con amigos del niño (idealmente con intereses afines) enfocadas en juegos de rol, ajedrez, Catan, o juegos de construcción colaborativa. Fomenta la interacción social estructurada.</p>
-                        </div>
-
-                        <!-- Tarjeta 2 -->
-                        <div class="border border-slate-200 rounded-xl p-5 hover:border-pink-300 transition-colors flex flex-col h-full">
-                            <h4 class="font-bold text-lg text-slate-900 mb-2">"El Guía Turístico Familiar"</h4>
-                            <p class="text-slate-600 text-sm leading-relaxed flex-grow"><strong class="text-slate-800">Cómo se hace:</strong> Planear una salida mensual (museo, excursión). Asignar al niño la tarea de diseñar la ruta y explicar a la familia un dato curioso del lugar, desarrollando su ingenio, expresión social y creatividad.</p>
-                        </div>
-
-                        <!-- Tarjeta 3 (Nueva agregada por ti) -->
-                        <div class="border border-slate-200 rounded-xl p-5 hover:border-pink-300 transition-colors flex flex-col h-full">
-                            <h4 class="font-bold text-lg text-slate-900 mb-2">"Inventos Caseros"</h4>
-                            <p class="text-slate-600 text-sm leading-relaxed flex-grow"><strong class="text-slate-800">Cómo se hace:</strong> Se reunirán materiales reciclados encontrados en casa y se propondrá un reto: Crear algo útil; un juguete, herramienta o máquina. El niño diseñará su proyecto primero a través de un dibujo y posteriormente se construirá para explicar cómo funciona.</p>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-
-            <!-- 6. Formación y Apoyo Familiar -->
-            <div class="bg-white rounded-2xl shadow-lg overflow-hidden border-l-8 border-purple-500 hover:shadow-xl transition-shadow duration-300">
-                <div class="p-8">
-                    <h3 class="text-2xl font-bold flex items-center mb-4 text-slate-800">
-                        <i data-lucide="home" class="mr-3 text-purple-500 h-8 w-8"></i> 
-                        6. Formación y Apoyo Familiar
-                    </h3>
-                    <div class="bg-purple-50 border border-purple-100 p-4 rounded-lg mb-6 text-slate-700">
-                        <strong class="text-purple-800">Objetivo:</strong> Cuidar la salud mental de los padres y crear redes de apoyo.
-                    </div>
-                    <div class="grid md:grid-cols-2 gap-6">
-                        <div class="border border-slate-200 rounded-xl p-5 hover:border-purple-300 transition-colors">
-                            <h4 class="font-bold text-lg text-slate-900 mb-2">"Diario Compartido de Crianza"</h4>
-                            <p class="text-slate-600 text-sm leading-relaxed"><strong class="text-slate-800">Cómo se hace:</strong> Los padres llevan un cuaderno donde anotan brevemente las estrategias que funcionaron en la semana y las crisis que tuvieron, para mantener un registro y apoyo mutuo.</p>
-                        </div>
-                        <div class="border border-slate-200 rounded-xl p-5 hover:border-purple-300 transition-colors">
-                            <h4 class="font-bold text-lg text-slate-900 mb-2">"Participación en Escuela de Padres"</h4>
-                            <p class="text-slate-600 text-sm leading-relaxed"><strong class="text-slate-800">Cómo se hace:</strong> Inscribirse en programas locales (como PROPHAC). La tarea mensual de los padres es llevar al menos un "caso de éxito" de su semana y pedir consejo sobre un "caso de fracaso" para debatir con otras familias.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 7. Colaboración con la Escuela -->
-            <div class="bg-white rounded-2xl shadow-lg overflow-hidden border-l-8 border-blue-500 hover:shadow-xl transition-shadow duration-300">
-                <div class="p-8">
-                    <h3 class="text-2xl font-bold flex items-center mb-4 text-slate-800">
-                        <i data-lucide="school" class="mr-3 text-blue-500 h-8 w-8"></i> 
-                        7. Colaboración con la Escuela
-                    </h3>
-                    <div class="bg-blue-50 border border-blue-100 p-4 rounded-lg mb-6 text-slate-700">
-                        <strong class="text-blue-800">Objetivo:</strong> Hacer equipo con los docentes para evitar el aburrimiento y la desmotivación escolar.
-                    </div>
-                    <div class="grid md:grid-cols-2 gap-6">
-                        <div class="border border-slate-200 rounded-xl p-5 hover:border-blue-300 transition-colors">
-                            <h4 class="font-bold text-lg text-slate-900 mb-2">"El Portafolio de Talentos"</h4>
-                            <p class="text-slate-600 text-sm leading-relaxed"><strong class="text-slate-800">Cómo se hace:</strong> Al inicio del ciclo escolar, los padres arman una carpeta con fotos de los proyectos del niño en casa, libros favoritos y un cuestionario de intereses. Se presenta al tutor para ayudarle a conocer su perfil rápidamente.</p>
-                        </div>
-                        <div class="border border-slate-200 rounded-xl p-5 hover:border-blue-300 transition-colors">
-                            <h4 class="font-bold text-lg text-slate-900 mb-2">"Reuniones de Alineación Proactivas"</h4>
-                            <p class="text-slate-600 text-sm leading-relaxed"><strong class="text-slate-800">Cómo se hace:</strong> Solicitar una reunión breve cada bimestre. El objetivo es preguntar al maestro: "¿Qué tema van a ver el próximo mes para que nosotros lo reforcemos o profundicemos en casa?", logrando un enriquecimiento curricular coordinado.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </section>
-    <!-- ======================================================================== -->
-    <!-- FIN DE LA SECCIÓN DE ESTRATEGIAS                                         -->
-    <!-- ======================================================================== -->
-
-    <!-- Footer -->
+        </section>
+    </main>
     <footer class="bg-slate-900 text-slate-300 py-12">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-3 gap-8">
             <div>
-                <h3 class="text-white text-lg font-bold mb-4 flex items-center">
-                    <i data-lucide="brain" class="h-5 w-5 mr-2"></i> Psicolearning
-                </h3>
-                <p class="text-sm text-slate-400">
-                    <p>Administrado por:<p>
-                    <p>Jesús Alejandro Ascencio Sandoval<p>
-                    <p>Max Adrian Domen Sevilla<p>
-                    <p>Valeria Figueroa Montes<p>
-                    <p>Cristobal Sebastián Mejia España<p>
-                    <p>Giovanna Vianney Martínez Enríquez<p>
-                    <p>Derek Owen Villegas López<p>
-                </p>
+                <h3 class="text-white text-lg font-bold mb-4 flex items-center"><i data-lucide="brain" class="h-5 w-5 mr-2"></i> Psicolearning</h3>
+                <p class="text-sm text-slate-400">Estrategias psicoeducativas para un desarrollo académico y emocional equilibrado.</p>
             </div>
             <div>
-                <h4 class="text-white font-semibold mb-4">Enlaces Rápidos</h4>
+                <h4 class="text-white font-semibold mb-4">Enlaces</h4>
                 <ul class="space-y-2 text-sm">
-                    <li><a href="#inicio" class="hover:text-white transition-colors">Inicio</a></li>
-                    <li><a href="#definicion" class="hover:text-white transition-colors">Definición</a></li>
-                    <li><a href="#conceptos" class="hover:text-white transition-colors">Conceptos</a></li>
-                    <li><a href="#galeria" class="hover:text-white transition-colors">Galería</a></li>
-                    <li><a href="#estrategias" class="hover:text-white transition-colors">Estrategias</a></li>
-                    <li><a href="#mexico" class="hover:text-white transition-colors">Marco Legal MX</a></li>
+                    <li><a href="index.html" class="hover:text-white">Inicio</a></li>
+                    <li><a href="index.html#estrategias" class="hover:text-white">Recursos</a></li>
+                    <li><a href="index.html#mexico" class="hover:text-white">Contexto México</a></li>
+                    <li><a href="index.html#rol" class="hover:text-white">Rol del Psicólogo</a></li>
                 </ul>
             </div>
             <div>
-                <section id="contacto" class="py-16 md:py-1 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"></section>
                 <h4 class="text-white font-semibold mb-4">Contacto</h4>
-                <p class="text-sm text-slate-400">
-                    Universidad de Guadalajara<br />
-                    Guadalajara, México<br />
-                    Licenciatura en Pscología <br />
-                    Necesidades Psicoeducativas Especiales <br />
-                    psicolearning7@gmail.com
-                </p>
+                <p class="text-sm text-slate-400">Universidad de Guadalajara<br>Guadalajara, México<br>Licenciatura en Psicología<br>Necesidades Psicoeducativas Especiales<br>psicolearning7@gmail.com</p>
             </div>
         </div>
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8 pt-8 border-t border-slate-800 text-center text-xs text-slate-500">
-            &copy; 2026 Proyecto Institucional NPE. Todos los derechos reservados.
-        </div>
     </footer>
-
     <script>
-        // Inicializa los iconos de Lucide
         lucide.createIcons();
-
-        // Menú móvil (hamburguesa) - funciona en todas las páginas que usan #btn-menu y #menu-movil
-        const btnMenu = document.getElementById('btn-menu');
-        const menuMovil = document.getElementById('menu-movil');
-        const opcionesMenu = document.querySelectorAll('.opcion-menu');
-
-        if (btnMenu && menuMovil) {
-            let menuAbierto = false;
-
-            btnMenu.addEventListener('click', () => {
-                menuAbierto = !menuAbierto;
-
-                if (menuAbierto) {
-                    menuMovil.classList.remove('hidden');
-                    btnMenu.innerHTML = '<i data-lucide="x" id="icono-menu" class="h-6 w-6"></i>';
-                } else {
-                    menuMovil.classList.add('hidden');
-                    btnMenu.innerHTML = '<i data-lucide="menu" id="icono-menu" class="h-6 w-6"></i>';
-                }
-
-                // Re-renderiza el icono (Lucide reemplaza el <i> con SVG)
-                lucide.createIcons();
-            });
-
-            opcionesMenu.forEach(enlace => {
-                enlace.addEventListener('click', () => {
-                    menuAbierto = false;
-                    menuMovil.classList.add('hidden');
-                    btnMenu.innerHTML = '<i data-lucide="menu" id="icono-menu" class="h-6 w-6"></i>';
-                    lucide.createIcons();
-                });
-            });
-        }
+        const btnMenuAltas = document.getElementById('btn-menu');
+        const menuMovilAltas = document.getElementById('menu-movil');
+        let menuAbiertoAltas = false;
+        btnMenuAltas.addEventListener('click', () => {
+            menuAbiertoAltas = !menuAbiertoAltas;
+            menuMovilAltas.classList.toggle('hidden', !menuAbiertoAltas);
+        });
     </script>
 </body>
 </html>

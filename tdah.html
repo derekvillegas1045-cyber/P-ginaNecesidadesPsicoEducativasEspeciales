@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="es" style="scroll-behavior: smooth;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TDAH - Psicolearning</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .hero-panel { background: linear-gradient(135deg, #0ea5e9 0%, #f59e0b 45%, #ec4899 100%); }
+        .detail-card { border-radius: 28px; box-shadow: 0 28px 90px rgba(15,23,42,.12); }
+        .pill { display: inline-flex; align-items: center; gap: .6rem; padding: .75rem 1.25rem; border-radius: 9999px; font-weight: 800; }
+        .info-box { border-radius: 28px; border: 1px solid rgba(148,163,184,.24); }
+    </style>
+</head>
+<body class="bg-slate-50 font-sans text-slate-900 min-h-screen">
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center gap-3">
+                    <i data-lucide="zap" class="h-8 w-8 text-cyan-600"></i>
+                    <a href="index.html#inicio" class="text-xl font-bold text-slate-900 hover:text-cyan-600 transition">Psicolearning</a>
+                </div>
+                <div class="hidden md:flex items-center gap-6">
+                    <a href="#introduccion" class="text-slate-600 hover:text-cyan-600">Introducción</a>
+                    <a href="#signos" class="text-slate-600 hover:text-cyan-600">Signos</a>
+                    <a href="#barreras" class="text-slate-600 hover:text-cyan-600">Barreras</a>
+                    <a href="#estrategias" class="text-slate-600 hover:text-cyan-600">Estrategias</a>
+                    <button class="bg-cyan-600 text-white px-4 py-2 rounded-lg hover:bg-cyan-700 transition" onclick="window.location='index.html';">Volver</button>
+                </div>
+                <div class="md:hidden">
+                    <button id="btn-menu" class="text-slate-600 hover:text-slate-900 focus:outline-none"><i data-lucide="menu" class="h-6 w-6"></i></button>
+                </div>
+            </div>
+        </div>
+        <div id="menu-movil" class="hidden bg-white border-t border-slate-200 md:hidden">
+            <div class="px-4 py-3 space-y-2">
+                <a href="#introduccion" class="block text-slate-600 hover:text-cyan-600">Introducción</a>
+                <a href="#signos" class="block text-slate-600 hover:text-cyan-600">Signos</a>
+                <a href="#barreras" class="block text-slate-600 hover:text-cyan-600">Barreras</a>
+                <a href="#estrategias" class="block text-slate-600 hover:text-cyan-600">Estrategias</a>
+                <button class="w-full text-left text-cyan-600 font-semibold" onclick="window.location='index.html';">Volver al inicio</button>
+            </div>
+        </div>
+    </nav>
+    <header class="hero-panel text-white py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid gap-12 lg:grid-cols-2 items-center">
+                <div>
+                    <span class="pill bg-white/15 border border-white/20 text-white">TDAH</span>
+                    <h1 class="mt-6 text-4xl md:text-5xl font-extrabold tracking-tight">Entender el TDAH como un reto de atención y recompensa</h1>
+                    <p class="mt-6 text-lg leading-8 text-slate-100 max-w-2xl">
+                        El TDAH es un reto en las funciones ejecutivas y en cómo el cerebro responde a la dopamina. No es falta de voluntad: es una necesidad de estímulos claros, inmediatos y significativos.
+                    </p>
+                </div>
+                <div class="grid gap-6">
+                    <div class="detail-card p-8 bg-white/90 text-slate-900 backdrop-blur-sm">
+                        <h2 class="text-2xl font-bold mb-3">Funciones ejecutivas</h2>
+                        <p class="text-slate-600">Planificar, organizar, medir el tiempo y regular emociones son los principales desafíos.</p>
+                    </div>
+                    <div class="detail-card p-8 bg-white/90 text-slate-900 backdrop-blur-sm">
+                        <h2 class="text-2xl font-bold mb-3">Dopamina y motivación</h2>
+                        <p class="text-slate-600">Si una tarea no es interesante o no promete recompensa inmediata, su cerebro se desconecta.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-20">
+        <section id="introduccion" class="grid gap-10 lg:grid-cols-2 items-start">
+            <article class="bg-white p-10 rounded-[32px] detail-card border border-slate-200">
+                <h2 class="text-3xl font-bold text-slate-900 mb-5">Introducción: ¿Qué es?</h2>
+                <p class="text-slate-600 leading-relaxed mb-4">Neuropsicológicamente, el TDAH es un reto en las funciones ejecutivas. Estas funciones son como el "director de orquesta" del cerebro, encargado de planificar, organizar, medir el tiempo y regular las emociones.</p>
+                <p class="text-slate-600 leading-relaxed">Además, el cerebro con TDAH tiene una relación distinta con la dopamina. Si una actividad no es súper interesante, novedosa o no tiene una recompensa inmediata, su cerebro literalmente se apaga o busca algo más estimulante.</p>
+                <p class="text-slate-600 leading-relaxed">Por eso pueden jugar videojuegos por tres horas sin pestañear, pero no pueden hacer cinco minutos de tarea de matemáticas.</p>
+            </article>
+            <div class="space-y-6">
+                <div class="bg-cyan-600 text-white p-8 rounded-[32px] shadow-2xl">
+                    <h3 class="text-2xl font-bold mb-3">El director de orquesta</h3>
+                    <p class="leading-relaxed">Las funciones ejecutivas coordinan atención, memoria y control emocional. En el TDAH, este director tiene dificultad para mantener el ritmo.</p>
+                </div>
+                <div class="bg-slate-50 p-8 rounded-[32px] border border-slate-200">
+                    <h3 class="text-xl font-semibold text-slate-900 mb-3">Recompensa inmediata</h3>
+                    <p class="text-slate-600 leading-relaxed">Lo que no da resultado rápido pierde energía mental. Por eso el interés es clave.</p>
+                </div>
+            </div>
+        </section>
+        <section id="signos">
+            <div class="bg-gradient-to-r from-cyan-500 via-sky-500 to-blue-600 text-white rounded-[32px] p-10 shadow-2xl">
+                <div class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+                    <div>
+                        <p class="text-sm uppercase tracking-[0.32em] text-cyan-100 font-semibold">Signos y Síntomas</p>
+                        <h2 class="mt-4 text-3xl md:text-4xl font-extrabold">Las tres caras del TDAH</h2>
+                    </div>
+                    <div class="rounded-3xl bg-white/10 px-5 py-4 max-w-md text-slate-100">
+                        <p>Inatención, hiperactividad e impulsividad se muestran en los comportamientos diarios y en la forma en que el cerebro atiende a las demandas.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="grid gap-6 mt-10 sm:grid-cols-2 xl:grid-cols-3">
+                <div class="bg-white p-8 rounded-[32px] detail-card border border-slate-200">
+                    <h3 class="text-xl font-semibold text-slate-900 mb-3">Inatención</h3>
+                    <p class="text-slate-600 leading-relaxed">Empieza cinco cosas y no termina ninguna, pierde sus pertenencias y parece no escuchar cuando se le habla.</p>
+                </div>
+                <div class="bg-white p-8 rounded-[32px] detail-card border border-slate-200">
+                    <h3 class="text-xl font-semibold text-slate-900 mb-3">Hiperactividad</h3>
+                    <p class="text-slate-600 leading-relaxed">Le cuesta mantenerse sentado, mueve piernas, muerde el lápiz, hace ruidos o se levanta constantemente.</p>
+                </div>
+                <div class="bg-white p-8 rounded-[32px] detail-card border border-slate-200">
+                    <h3 class="text-xl font-semibold text-slate-900 mb-3">Impulsividad</h3>
+                    <p class="text-slate-600 leading-relaxed">Interrumpe conversaciones, responde antes de tiempo o actúa sin pensar en las consecuencias.</p>
+                </div>
+            </div>
+        </section>
+        <section id="barreras" class="space-y-10">
+            <div class="text-center">
+                <p class="text-cyan-600 uppercase tracking-[0.35em] font-semibold">Barreras académicas</p>
+                <h2 class="mt-4 text-3xl md:text-4xl font-extrabold text-slate-900">El sistema escolar no está hecho para ellos</h2>
+            </div>
+            <div class="grid gap-6 lg:grid-cols-2">
+                <div class="bg-white p-10 rounded-[32px] detail-card border border-slate-200">
+                    <h3 class="text-2xl font-bold text-slate-900 mb-5">Clases largas y pasivas</h3>
+                    <p class="text-slate-600 leading-relaxed">Estar sentado 50 minutos escuchando a alguien hablar es una tortura para su cerebro, que necesita movimiento para mantenerse alerta.</p>
+                </div>
+                <div class="bg-white p-10 rounded-[32px] detail-card border border-slate-200">
+                    <h3 class="text-2xl font-bold text-slate-900 mb-5">Memoria de trabajo</h3>
+                    <p class="text-slate-600 leading-relaxed">Si el maestro da varias instrucciones, el niño recuerda solo la primera frase y el resto se borra de su mente.</p>
+                </div>
+                <div class="bg-white p-10 rounded-[32px] detail-card border border-slate-200">
+                    <h3 class="text-2xl font-bold text-slate-900 mb-5">Ceguera del tiempo</h3>
+                    <p class="text-slate-600 leading-relaxed">Para ellos existe el ahora y el no ahora. Por eso dejan los proyectos para la noche anterior.</p>
+                </div>
+                <div class="bg-white p-10 rounded-[32px] detail-card border border-slate-200">
+                    <h3 class="text-2xl font-bold text-slate-900 mb-5">Organización</h3>
+                    <p class="text-slate-600 leading-relaxed">Su mochila suele ser un agujero negro de papeles arrugados, tareas olvidadas y sándwiches a medio comer.</p>
+                </div>
+            </div>
+        </section>
+        <section id="estrategias" class="grid gap-10 xl:grid-cols-2">
+            <div class="bg-slate-900 text-white rounded-[32px] p-10 shadow-2xl">
+                <div class="flex items-center gap-3 mb-6">
+                    <span class="inline-flex rounded-full bg-cyan-500 px-4 py-2 text-sm font-semibold">En Casa</span>
+                </div>
+                <div class="space-y-6">
+                    <div>
+                        <h3 class="text-2xl font-bold">Hacer el tiempo visible</h3>
+                        <p class="mt-3 text-slate-200 leading-relaxed">Usa relojes de arena o temporizadores visuales para que vean cómo se va acabando el tiempo.</p>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold">Pasos cortos</h3>
+                        <p class="mt-3 text-slate-200 leading-relaxed">No digas "Limpia tu cuarto". Di: "Primero recoge la ropa del piso" y espera a que termine.</p>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold">Recompensas inmediatas</h3>
+                        <p class="mt-3 text-slate-200 leading-relaxed">Usa puntos o choca los cinco y elogia su esfuerzo justo después de cumplir la tarea.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-white rounded-[32px] detail-card border border-slate-200 p-10">
+                <div class="mb-8">
+                    <span class="inline-flex rounded-full bg-cyan-100 px-4 py-2 text-cyan-800 text-sm font-semibold">En la Escuela</span>
+                </div>
+                <div class="space-y-6">
+                    <div>
+                        <h3 class="text-2xl font-bold text-slate-900">Movimiento con propósito</h3>
+                        <p class="mt-3 text-slate-600 leading-relaxed">No lo castigues sin recreo. Dale permisos de movimiento: encargado de borrar el pizarrón o repartir hojas.</p>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-slate-900">Ubicación estratégica</h3>
+                        <p class="mt-3 text-slate-600 leading-relaxed">Debe sentarse cerca del maestro y lejos de ventanas, puertas o compañeros muy platicadores.</p>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-slate-900">Instrucciones una a una</h3>
+                        <p class="mt-3 text-slate-600 leading-relaxed">Da indicaciones cortas y directas, y pide que repita lo que tiene que hacer antes de empezar.</p>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-slate-900">Formatos amigables</h3>
+                        <p class="mt-3 text-slate-600 leading-relaxed">Reduce ejercicios repetitivos: 5 multiplicaciones en lugar de 20, y usa marcatextos de colores para destacar lo importante.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="bg-slate-900 text-slate-300 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-3 gap-8">
+            <div>
+                <h3 class="text-white text-lg font-bold mb-4 flex items-center"><i data-lucide="zap" class="h-5 w-5 mr-2"></i> Psicolearning</h3>
+                <p class="text-sm text-slate-400">Estrategias para comprender y acompañar el TDAH con claridad y respeto.</p>
+            </div>
+            <div>
+                <h4 class="text-white font-semibold mb-4">Enlaces</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="index.html" class="hover:text-white">Inicio</a></li>
+                    <li><a href="index.html#estrategias" class="hover:text-white">Recursos</a></li>
+                    <li><a href="index.html#mexico" class="hover:text-white">Contexto México</a></li>
+                    <li><a href="index.html#rol" class="hover:text-white">Rol del Psicólogo</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-semibold mb-4">Contacto</h4>
+                <p class="text-sm text-slate-400">Universidad de Guadalajara<br>Guadalajara, México<br>Licenciatura en Psicología<br>Necesidades Psicoeducativas Especiales<br>psicolearning7@gmail.com</p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        lucide.createIcons();
+        const btnMenu = document.getElementById('btn-menu');
+        const menuMovil = document.getElementById('menu-movil');
+        let menuAbierto = false;
+        btnMenu.addEventListener('click', () => {
+            menuAbierto = !menuAbierto;
+            menuMovil.classList.toggle('hidden', !menuAbierto);
+        });
+    </script>
+</body>
+</html>

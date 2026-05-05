@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="es" style="scroll-behavior: smooth;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trastorno de la Comunicación - Psicolearning</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .hero-panel { background: linear-gradient(135deg, #e91e63 0%, #f06292 45%, #ff6b9d 100%); }
+        .detail-card { border-radius: 28px; box-shadow: 0 28px 90px rgba(15,23,42,.12); }
+        .pill { display: inline-flex; align-items: center; gap: .6rem; padding: .75rem 1.25rem; border-radius: 9999px; font-weight: 800; }
+        .info-box { border-radius: 28px; border: 1px solid rgba(148,163,184,.24); }
+    </style>
+</head>
+<body class="bg-slate-50 font-sans text-slate-900 min-h-screen">
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center gap-3">
+                    <i data-lucide="users" class="h-8 w-8 text-pink-600"></i>
+                    <a href="index.html#inicio" class="text-xl font-bold text-slate-900 hover:text-pink-600 transition">Psicolearning</a>
+                </div>
+                <div class="hidden md:flex items-center gap-6">
+                    <a href="#introduccion" class="text-slate-600 hover:text-pink-600">Introducción</a>
+                    <a href="#signos" class="text-slate-600 hover:text-pink-600">Signos</a>
+                    <a href="#barreras" class="text-slate-600 hover:text-pink-600">Barreras</a>
+                    <a href="#estrategias" class="text-slate-600 hover:text-pink-600">Estrategias</a>
+                    <button class="bg-pink-600 text-white px-4 py-2 rounded-lg hover:bg-pink-700 transition" onclick="window.location='trastorno-lenguaje.html';">Volver</button>
+                </div>
+                <div class="md:hidden">
+                    <button id="btn-menu" class="text-slate-600 hover:text-slate-900 focus:outline-none"><i data-lucide="menu" class="h-6 w-6"></i></button>
+                </div>
+            </div>
+        </div>
+        <div id="menu-movil" class="hidden bg-white border-t border-slate-200 md:hidden">
+            <div class="px-4 py-3 space-y-2">
+                <a href="#introduccion" class="block text-slate-600 hover:text-pink-600">Introducción</a>
+                <a href="#signos" class="block text-slate-600 hover:text-pink-600">Signos</a>
+                <a href="#barreras" class="block text-slate-600 hover:text-pink-600">Barreras</a>
+                <a href="#estrategias" class="block text-slate-600 hover:text-pink-600">Estrategias</a>
+                <button class="w-full text-left text-pink-600 font-semibold" onclick="window.location='trastorno-lenguaje.html';">Volver</button>
+            </div>
+        </div>
+    </nav>
+    <header class="hero-panel text-white py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid gap-12 lg:grid-cols-2 items-center">
+                <div>
+                    <span class="pill bg-white/15 border border-white/20 text-white">Trastorno de la Comunicación</span>
+                    <h1 class="mt-6 text-4xl md:text-5xl font-extrabold tracking-tight">El baile social del lenguaje</h1>
+                    <p class="mt-6 text-lg leading-8 text-slate-100 max-w-2xl">
+                        Es una dificultad neurológica para usar el lenguaje de manera adecuada según el contexto social. El niño sabe hablar, pero no sabe cómo usar esas palabras para relacionarse.
+                    </p>
+                </div>
+                <div class="grid gap-6">
+                    <div class="detail-card p-8 bg-white/90 text-slate-900 backdrop-blur-sm">
+                        <h2 class="text-2xl font-bold mb-3">Contexto social invisible</h2>
+                        <p class="text-slate-600">Las reglas para ajustar el lenguaje según el contexto no se procesan automáticamente.</p>
+                    </div>
+                    <div class="detail-card p-8 bg-white/90 text-slate-900 backdrop-blur-sm">
+                        <h2 class="text-2xl font-bold mb-3">Literalidad extrema</h2>
+                        <p class="text-slate-600">El sarcasmo, las metáforas y los gestos no se entienden de forma instintiva.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-20">
+        <section id="introduccion" class="grid gap-10 lg:grid-cols-2 items-start">
+            <article class="bg-white p-10 rounded-[32px] detail-card border border-slate-200">
+                <h2 class="text-3xl font-bold text-slate-900 mb-5">Introducción: ¿Qué es?</h2>
+                <p class="text-slate-600 leading-relaxed mb-4">Es una dificultad neurológica para usar el lenguaje de manera adecuada según el contexto social. El niño sabe hablar, pero no sabe cómo usar esas palabras para relacionarse.</p>
+                <p class="text-slate-600 leading-relaxed mb-4">La mayoría de nosotros ajustamos nuestra forma de hablar automáticamente: no le hablamos igual al director de la escuela que a nuestro mejor amigo en el recreo. Además, leemos "entre líneas" cuando alguien está aburrido o siendo sarcástico.</p>
+                <p class="text-slate-600 leading-relaxed">Para un niño con este trastorno, todas esas reglas sociales son invisibles. Su cerebro es extremadamente literal y no procesa que la comunicación es un baile de dos personas donde hay que tomar turnos y leer los gestos del otro.</p>
+            </article>
+            <div class="space-y-6">
+                <div class="bg-pink-600 text-white p-8 rounded-[32px] shadow-2xl">
+                    <h3 class="text-2xl font-bold mb-3">Un baile de dos</h3>
+                    <p class="leading-relaxed">La comunicación requiere ajustar tonos, tomar turnos y leer el lenguaje no verbal del otro.</p>
+                </div>
+                <div class="bg-slate-50 p-8 rounded-[32px] border border-slate-200">
+                    <h3 class="text-xl font-semibold text-slate-900 mb-3">Reglas invisibles</h3>
+                    <p class="text-slate-600 leading-relaxed">Para otros niños son automáticas; para estos, son completamente desconocidas.</p>
+                </div>
+            </div>
+        </section>
+        <section id="signos">
+            <div class="bg-gradient-to-r from-pink-500 via-rose-500 to-red-400 text-white rounded-[32px] p-10 shadow-2xl">
+                <div class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+                    <div>
+                        <p class="text-sm uppercase tracking-[0.32em] text-pink-100 font-semibold">Signos y Síntomas</p>
+                        <h2 class="mt-4 text-3xl md:text-4xl font-extrabold">Interacciones torpes y "raras"</h2>
+                    </div>
+                    <div class="rounded-3xl bg-white/10 px-5 py-4 max-w-md text-slate-100">
+                        <p>Suelen ser catalogados como "imprudentes", "rudos" o "raros" porque sus interacciones no cumplen las normas sociales esperadas.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="grid gap-6 mt-10 sm:grid-cols-2 xl:grid-cols-3">
+                <div class="bg-white p-8 rounded-[32px] detail-card border border-slate-200">
+                    <h3 class="text-xl font-semibold text-slate-900 mb-3">Falta de filtro social</h3>
+                    <p class="text-slate-600 leading-relaxed">Dicen exactamente lo que piensan sin considerar sentimientos (por ejemplo: "Señora, qué fea está su camisa").</p>
+                </div>
+                <div class="bg-white p-8 rounded-[32px] detail-card border border-slate-200">
+                    <h3 class="text-xl font-semibold text-slate-900 mb-3">Tono inadecuado</h3>
+                    <p class="text-slate-600 leading-relaxed">Le hablan al maestro con familiaridad excesiva o usan un tono robótico con compañeros de su edad.</p>
+                </div>
+                <div class="bg-white p-8 rounded-[32px] detail-card border border-slate-200">
+                    <h3 class="text-xl font-semibold text-slate-900 mb-3">Monólogos sin fin</h3>
+                    <p class="text-slate-600 leading-relaxed">Hablan de lo que les interesa sin parar, sin notar que el otro ya está mirando el reloj.</p>
+                </div>
+                <div class="bg-white p-8 rounded-[32px] detail-card border border-slate-200">
+                    <h3 class="text-xl font-semibold text-slate-900 mb-3">Pensamiento hiperliteral</h3>
+                    <p class="text-slate-600 leading-relaxed">No captan sarcasmo, bromas de doble sentido ni metáforas. Si alguien dice "Me muero de hambre", se asusta.</p>
+                </div>
+                <div class="bg-white p-8 rounded-[32px] detail-card border border-slate-200">
+                    <h3 class="text-xl font-semibold text-slate-900 mb-3">Dificultad para contar historias</h3>
+                    <p class="text-slate-600 leading-relaxed">Omiten detalles clave o dan tantos irrelevantes que pierdes el hilo de la historia.</p>
+                </div>
+            </div>
+        </section>
+        <section id="barreras" class="space-y-10">
+            <div class="text-center">
+                <p class="text-pink-600 uppercase tracking-[0.35em] font-semibold">Barreras académicas</p>
+                <h2 class="mt-4 text-3xl md:text-4xl font-extrabold text-slate-900">Muros altos en dos áreas principales</h2>
+            </div>
+            <div class="grid gap-6 lg:grid-cols-2">
+                <div class="bg-white p-10 rounded-[32px] detail-card border border-slate-200">
+                    <h3 class="text-2xl font-bold text-slate-900 mb-5">Comprensión lectora inferencial</h3>
+                    <p class="text-slate-600 leading-relaxed">Pueden leer perfectamente pero si el examen pregunta "¿Por qué se sintió decepcionado?", reprueba. Su cerebro no infiere emociones no escritas textualmente.</p>
+                </div>
+                <div class="bg-white p-10 rounded-[32px] detail-card border border-slate-200">
+                    <h3 class="text-2xl font-bold text-slate-900 mb-5">El infierno del trabajo en equipo</h3>
+                    <p class="text-slate-600 leading-relaxed">Al no saber negociar o aceptar ideas con diplomacia, los trabajos grupales terminan en peleas o quejas constantes.</p>
+                </div>
+                <div class="col-span-full bg-white p-10 rounded-[32px] detail-card border border-slate-200">
+                    <h3 class="text-2xl font-bold text-slate-900 mb-5">Rechazo social paradójico</h3>
+                    <p class="text-slate-600 leading-relaxed">A diferencia de otros trastornos, estos niños sí quieren tener amigos pero sus acercamientos son inusuales (pararse muy cerca, preguntas inapropiadas). Los demás los rechazan, causándoles tristeza profunda.</p>
+                </div>
+            </div>
+        </section>
+        <section id="estrategias" class="grid gap-10 xl:grid-cols-2">
+            <div class="bg-slate-900 text-white rounded-[32px] p-10 shadow-2xl">
+                <div class="flex items-center gap-3 mb-6">
+                    <span class="inline-flex rounded-full bg-pink-500 px-4 py-2 text-sm font-semibold">En Casa</span>
+                </div>
+                <div class="space-y-6">
+                    <div>
+                        <h3 class="text-2xl font-bold">Autopsias sociales</h3>
+                        <p class="mt-3 text-slate-200 leading-relaxed">Cuando ocurra un malentendido, no lo castigues. Desglosen la situación: "¿Qué dijiste? ¿Qué cara puso? ¿Por qué se enojó? ¿Qué podrías decir la próxima vez?". Enséñale las reglas como matemáticas.</p>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold">Juego de roles</h3>
+                        <p class="mt-3 text-slate-200 leading-relaxed">Practiquen escenarios antes de que ocurran. "Mañana vamos a un cumpleaños. Vamos a practicar cómo saludar y qué decir si te da un dulce que no te gusta".</p>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold">Señales secretas</h3>
+                        <p class="mt-3 text-slate-200 leading-relaxed">Acuerda una señal discreta (como tocarte la oreja) para avisarle en público que está hablando demasiado tiempo o invadiendo espacio personal.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-white rounded-[32px] detail-card border border-slate-200 p-10">
+                <div class="mb-8">
+                    <span class="inline-flex rounded-full bg-pink-100 px-4 py-2 text-pink-800 text-sm font-semibold">En la Escuela</span>
+                </div>
+                <div class="space-y-6">
+                    <div>
+                        <h3 class="text-2xl font-bold text-slate-900">Conversaciones en formato cómic</h3>
+                        <p class="mt-3 text-slate-600 leading-relaxed">Dibuja monigotes con "burbujas de diálogo" y "de pensamiento" para que vea la diferencia entre lo que la gente dice y lo que piensa o siente.</p>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-slate-900">Roles estructurados en equipo</h3>
+                        <p class="mt-3 text-slate-600 leading-relaxed">En lugar de "pónganse de acuerdo", da roles fijos: "Tú escribes, tú buscas materiales y tú mides el tiempo". Quita la carga de negociar socialmente.</p>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-slate-900">Explicar metáforas y sarcasmo</h3>
+                        <p class="mt-3 text-slate-600 leading-relaxed">Si usas dichos ("Se nos fue el tren") o sarcasmo, detente un segundo para explicar exactamente qué significan. Asegúrate de que no se quede con la interpretación literal.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="bg-slate-900 text-slate-300 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-3 gap-8">
+            <div>
+                <h3 class="text-white text-lg font-bold mb-4 flex items-center"><i data-lucide="users" class="h-5 w-5 mr-2"></i> Psicolearning</h3>
+                <p class="text-sm text-slate-400">Estrategias para comprender y enseñar las reglas invisibles de la comunicación social.</p>
+            </div>
+            <div>
+                <h4 class="text-white font-semibold mb-4">Enlaces</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="index.html" class="hover:text-white">Inicio</a></li>
+                    <li><a href="trastorno-lenguaje.html" class="hover:text-white">Trastorno del Lenguaje</a></li>
+                    <li><a href="trastorno-habla.html" class="hover:text-white">Trastorno del Habla</a></li>
+                    <li><a href="trastorno-fluidez.html" class="hover:text-white">Trastorno de la Fluidez</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-semibold mb-4">Contacto</h4>
+                <p class="text-sm text-slate-400">Universidad de Guadalajara<br>Guadalajara, México<br>Licenciatura en Psicología<br>Necesidades Psicoeducativas Especiales<br>psicolearning7@gmail.com</p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        lucide.createIcons();
+        const btnMenu = document.getElementById('btn-menu');
+        const menuMovil = document.getElementById('menu-movil');
+        let menuAbierto = false;
+        btnMenu.addEventListener('click', () => {
+            menuAbierto = !menuAbierto;
+            menuMovil.classList.toggle('hidden', !menuAbierto);
+        });
+    </script>
+</body>
+</html>
